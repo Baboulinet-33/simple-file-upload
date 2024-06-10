@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: docker.io/twostoryrobot/simple-file-upload
+  repository: docker.io/bnoleau/simple-upload-server
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.3"
+  tag: "1.0"
 
 imagePullSecrets: []
 nameOverride: ""
