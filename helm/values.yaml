@@ -41,7 +41,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 3000
+  port: 8080
 
 ingress:
   enabled: true
@@ -74,16 +74,26 @@ volumes:
 - name: cache-volume
   emptyDir:
     sizeLimit: 30Gi
-
+- name: config
+  configMap:
+    name: config
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
 - name: cache-volume
   mountPath: /uploads/
-
+- name: config
+  mountPath: /config
 
 nodeSelector: {}
 
 tolerations: []
 
 affinity: {}
+
+
+app:
+  addr: "0.0.0.0:8080"
+  document_root: "/uploads"
+  max_upload_size: 10737418240
+
