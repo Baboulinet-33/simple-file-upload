@@ -1,11 +1,11 @@
 {
     "addr": "{{ .Values.app.addr }}",
     "document_root": "{{ .Values.app.document_root }}",
-    "enable_cors": true,
+    "enable_cors": {{ .Values.app.enable_cors }},
     "max_upload_size": {{ int .Values.app.max_upload_size }},
     "file_naming_strategy": "uuid",
     "shutdown_timeout": 15000,
-    "enable_auth": true,
+    "enable_auth": {{ .Values.app.enable_auth }},
     "read_only_tokens": [],
     "read_write_tokens": []
 }

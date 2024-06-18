@@ -96,4 +96,5 @@ app:
   addr: "0.0.0.0:8080"
   document_root: "/uploads"
   max_upload_size: 10737418240
-
+  enable_auth: false
+  enable_cors: true
